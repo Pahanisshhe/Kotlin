@@ -6,7 +6,7 @@ fun main(){
     val userName = readLine();
     println("Hello, $userName")
 
-    //task4
+    //task5
     println("what is your favorite programming language?")
     when(readLine()){
         "Prolog", "Kotlin" -> println("Подлиза!")
