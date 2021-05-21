@@ -14,4 +14,14 @@ fun main(){
         "C#" -> println("2")
         "Python" -> println("3")
     }
+    
+    //task6
+    sumDit("4567")
+}
+
+fun sumDit(number :String){
+    val arr = number.toList()
+    val arrOfInt = arr.map{ it.toString().toInt() }
+
+    print(arrOfInt.sum())
 }
