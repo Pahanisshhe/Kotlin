@@ -5,6 +5,7 @@ fun main() {
     //print(sumDig(45))
     //print(maxDig(8654))
     //print(minDig(6574))
+    //print(mulDig(55))
 }
 
 fun task1() = println("Hello, world!")
@@ -44,3 +45,5 @@ fun minDig(number: Int): Int {
             curMin
     return minDig(number, 9)
 }
+
+fun mulDig(number: Int): Int = if (number != 0) number%10 * mulDig(number/10) else 1
