@@ -8,6 +8,7 @@ fun main() {
     //print(mulDig(55))
     //print(sumPrimDiv(30))
     //print(sumOddDig3(53455))
+    //print(method3(14))
 }
 
 fun task1() = println("Hello, world!")
@@ -82,3 +83,18 @@ fun sumOddDig3(number: Int): Int =
         else
             sumOddDig3(number/10)
     else 0
+
+fun method3(number: Int): Int {
+    fun method3(number: Int, curDiv: Int): Int =
+        if (curDiv <= number/2)
+            if (number%curDiv == 0)
+                if (sumDig(curDiv) < sumDig(number))
+                    curDiv * method3(number, curDiv+1)
+                else
+                    method3(number, curDiv+1)
+            else
+                method3(number, curDiv+1)
+        else 1
+
+    return method3(number, 2)
+}
