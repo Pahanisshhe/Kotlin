@@ -4,6 +4,7 @@ fun main() {
     //task5()
     //print(sumDig(45))
     //print(maxDig(8654))
+    //print(minDig(6574))
 }
 
 fun task1() = println("Hello, world!")
@@ -30,4 +31,16 @@ fun maxDig(number: Int): Int {
         else
             curMax
     return maxDig(number, 0)
+}
+
+fun minDig(number: Int): Int {
+    fun minDig(number: Int, curMin: Int): Int =
+        if (number != 0)
+            if (number % 10 < curMin)
+                minDig(number / 10, number % 10)
+            else
+                minDig(number / 10, curMin)
+        else
+            curMin
+    return minDig(number, 9)
 }
