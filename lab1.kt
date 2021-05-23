@@ -6,6 +6,7 @@ fun main() {
     //print(maxDig(8654))
     //print(minDig(6574))
     //print(mulDig(55))
+    //print(sumPrimDiv(30))
 }
 
 fun task1() = println("Hello, world!")
@@ -47,3 +48,28 @@ fun minDig(number: Int): Int {
 }
 
 fun mulDig(number: Int): Int = if (number != 0) number%10 * mulDig(number/10) else 1
+
+fun sumPrimDiv(number: Int): Int {
+    fun primNum(number: Int, div: Int): Boolean =
+        if(div <= number/2)
+            if(number%div == 0)
+                false
+            else
+                primNum(number, div+1)
+        else
+            true
+
+    fun sumPrimDiv(number: Int, curDiv: Int): Int =
+        if(curDiv <= number/2)
+            if(number%curDiv == 0)
+                if(primNum(curDiv, 2))
+                    curDiv + sumPrimDiv(number, curDiv+1)
+                else
+                    sumPrimDiv(number, curDiv+1)
+            else
+                sumPrimDiv(number, curDiv+1)
+        else
+            0
+
+    return sumPrimDiv(number, 2)
+}
