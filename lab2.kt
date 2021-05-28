@@ -26,3 +26,9 @@ tailrec fun maxDigDown(number: Int, maxDig: Int): Int =
         else
             maxDigDown(number/10, maxDig)
     else maxDig
+
+//task4
+fun operNumber1(number: Int, oper: (Int, Int) -> Int, init: Int): Int =
+    if (number != 0)
+        oper(number%10, operNumber1(number/10, oper, init))
+    else init
