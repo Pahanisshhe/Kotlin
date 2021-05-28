@@ -40,3 +40,17 @@ fun operNumber2(number: Int, oper1: (Int, Int) -> Int, init: Int, oper2: (Int) -
             oper1(number%10, operNumber2(number/10, oper1, init, oper2))
         else operNumber2(number/10, oper1, init, oper2) * 10 + number%10
     else init
+
+fun main() {
+    //print(sumDigUp(1324))
+    //print(sumDigDown(1324, 0))
+    //print(sumDigDownTail(1534,0))
+    //print(mulDigUp(333))
+    //print(mulDigDown(333,1))
+    //print(maxDigUp(1119))
+    //print(maxDigDown(1119, 0))
+    //print(operNumber(1119, {a, b -> a + b}, 0))
+    
+    //делит на 3 цифры делящиеся на 3
+    //print(operNumber2(6655, {a, b -> b*10 + a/3}, 0, {a -> a%3 == 0}))
+}
