@@ -32,3 +32,11 @@ fun operNumber1(number: Int, oper: (Int, Int) -> Int, init: Int): Int =
     if (number != 0)
         oper(number%10, operNumber1(number/10, oper, init))
     else init
+
+//task5
+fun operNumber2(number: Int, oper1: (Int, Int) -> Int, init: Int, oper2: (Int) -> Boolean): Int =
+    if (number != 0)
+        if(oper2(number%10))
+            oper1(number%10, operNumber2(number/10, oper1, init, oper2))
+        else operNumber2(number/10, oper1, init, oper2) * 10 + number%10
+    else init
