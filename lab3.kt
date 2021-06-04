@@ -1,7 +1,6 @@
 //task1
 fun inputArray(arr: Array<Int?>, size: Int): Array<Int?> =
     if (size != 0) {
-
         arr[size - 1] = readLine()?.toInt()
         inputArray(arr, size - 1)
     }
@@ -14,8 +13,7 @@ fun outputArray(arr: Array<Int?>, size: Int): Unit? =
     }
     else null
 
-fun main() {
-
+fun inputArray(): Array<Int?>? {
     println("Input size of array:")
     val size: Int? = readLine()?.toInt()
 
@@ -30,6 +28,14 @@ fun main() {
     if (arr != null && size != null)
         outputArray(arr, size)
 
+    return arr
+}
+
+tailrec fun arrayOp(arr: Array<Int?>, lamda: (Array<Int>, Int) -> Int, init: Int = 0): Int? =
+    if (arr.size != 0)
+        lamda(arr[])
 
 
+fun main() {
+    inputArray()
 }
